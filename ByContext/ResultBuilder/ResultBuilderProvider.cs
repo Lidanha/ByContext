@@ -23,6 +23,7 @@ namespace ByContext.ResultBuilder
         {
             this.ResultBuildersRegistry = new Dictionary<Type, Type>() 
             {
+                {typeof(List<>),typeof(ListResultBuilder<>)}, // Adding support for .Net 4.5.2. Type comparision had breaking changes
                 {typeof(IList<>),typeof(ListResultBuilder<>)},
                 {typeof(IEnumerable<>),typeof(EnumerableResultBuilder<>)},
                 {typeof(ICollection<>),typeof(CollectionResultBuilder<>)},
