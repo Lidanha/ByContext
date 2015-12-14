@@ -33,8 +33,8 @@ namespace ByContext.FilterConditions.TextMatch
             return this.Subject + " " + this.Value + " " + this.Negate.ToString();
         }
 
-        public TextMatchCondition(string subject, string value):this(subject,value,false)
-        {}
+        public TextMatchCondition(string subject, string value) : this(subject, value, false) { }
+       
 
         public TextMatchCondition(string subject, string value, bool negate)
         {
@@ -42,6 +42,9 @@ namespace ByContext.FilterConditions.TextMatch
             Value = value;
             Negate = negate;
         }
+
+        public TextMatchCondition() : this(string.Empty, string.Empty) { }
+
 
         public bool Evaluate(string value)
         {
