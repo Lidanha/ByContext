@@ -22,11 +22,11 @@ namespace ByContext.FilterConditions.TextMatch
         public static readonly string Name = "TextMatch";
 
         [DataMember]
-        public string Subject { get; private set; }
+        public string Subject { get; set; }
         [DataMember]
         public string Value { get; set; }
         [DataMember]
-        public bool Negate { get; private set; }
+        public bool Negate { get; set; }
 
         public override string ToString()
         {
@@ -34,7 +34,7 @@ namespace ByContext.FilterConditions.TextMatch
         }
 
         public TextMatchCondition(string subject, string value) : this(subject, value, false) { }
-       
+
 
         public TextMatchCondition(string subject, string value, bool negate)
         {
